@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+#body {
+    width: 0;
+    height: 0;
+    background-color: #262645;
+    position: fixed;
+}
+
+.body-expand {
+    position: fixed;
+    width: 105vw;
+    height: 105vh;
+    background-color: #24243b;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    transition: 0.5s;
+    z-index: auto;
+}
+
+#top-logo {
+    width: 50px;
+    margin: 10px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100;
+}
+
+#top-contact {
+    opacity: 0;
+    width: 50px;
+    background-color: #262645;
+    /* background-color: black; */
+    margin: 10px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 100;
+    transition: 0.2s ease;
+}
+
+#top-contact {
+    width: 40px;
+}
+
+.top {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+#top-logo-container:hover + #top-contact,
+#top-logo-container:active + #top-contact,
+#top-contact:hover,
+#body:hover #top-contact {
+    opacity: 1;
+    transform: translateX(100px);
+    transition: 0.2s ease;
+}
+
+#top-logo-container {
+    width: 50px;
+    height: 90px;
+    position: fixed;
+}
+
+#top-logo-container:hover {
+    width: 550px;
+}
+
+#me-desc {
+    font-size: 4rem;
+    color: #fff;
+    position: relative;
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#desc1,
+#desc2 {
+    position: fixed;
+    margin-left: 1rem;
+}
+
+#desc-container {
+    display: inline-block;
+    background-color: #141420;
+    border-radius: 5px;
+    width: 350px;
+    height: 6rem;
+    transform: translateY(26px);
+}
+
+.span-show {
+    width: 100px;
+}
+
+.span-hide {
+    display: inline-block;
+    transform: translateY(100px);
+    color: transparent;
+    transition: 0.3s;
+}
+
+#me-sub {
+    color: white;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+#me-story {
+    width: 100%;
+    height: 200px;
+    background-color: #d5d8df;
+    position: relative;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#me-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 0.3rem;
+}
+
+#me-about {
+    width: 70%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#me-tech {
+    width: 70%;
+    height: fit-content;
+    /*background-color: rgb(200, 200, 206);*/
+    background-color: #d5d8df;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    padding-bottom: 0rem;
+    animation-duration: 1s;
+    border-radius: 1.5rem;
+    animation: projects 1s ease 0s 1 normal forwards;
+    box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 10px;
+}
+
+#tech-title {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 2.7rem;
+    text-align: center;
+}
+
+#tech-content {
+    width: 90%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-icons {
+    cursor: pointer;
+    width: 10%;
+    height: fit-content;
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+.tech-icons:hover {
+    box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 10px;
+    transform: translate(-2px, -2px);
+}
+
+#me-projects-title {
+    position: relative;
+    color: white;
+    font-size: 4rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+#me-projects {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    min-height: 250px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.projects {
+    width: 430px;
+    height: 210px;
+    margin-right: 20px;
+    margin-bottom: 1.5rem;
+    background-color: #d5d8df;
+    border-radius: 15px;
+    float: left;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.54) 0px 3px 10px;
+    overflow: hidden;
+}
+
+.projects:hover .project-img,
+.projects:hover #projects-wip {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    transform: scale(1.2);
+    transition: 0.2s ease;
+}
+
+.projects:hover .projects-info {
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.projects .project-img {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease;
+}
+
+#projects-wip {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3.5rem;
+    width: fit-content;
+    height: 100%;
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.2s ease;
+}
+
+.projects-info {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    width: 430px;
+    height: 210px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: #141420;
+    z-index: 101;
+    opacity: 0;
+    color: white;
+}
+
+.info-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info-desc {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes projects {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-4rem);
+    }
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    height: 10px;
+    top: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: fixed;
+    color: black;
+    font-family: 'Signika Negative', sans-serif;
+
+    /* Position the tooltip text - see examples below! */
+    /*position: absolute;*/
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip:hover img {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
