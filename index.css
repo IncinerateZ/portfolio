@@ -7,6 +7,10 @@
     vertical-align: baseline;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 #body {
     width: 0;
     height: 0;
@@ -137,7 +141,7 @@
 #me-name {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     padding-top: 0.3rem;
 }
@@ -178,7 +182,8 @@
 
 #tech-content {
     width: 90%;
-    height: 300px;
+    height: fit-content;
+    min-height: 300px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -189,6 +194,7 @@
 .tech-icons {
     cursor: pointer;
     width: 10%;
+    min-width: 70px;
     height: fit-content;
     margin-left: 10px;
     margin-right: 10px;
@@ -336,4 +342,26 @@
 .tooltip:hover img {
     filter: blur(3px);
     -webkit-filter: blur(3px);
+}
+@media only screen and (max-width: 1185px) {
+    #me-story {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 858px) {
+    #me-desc {
+        text-align: center;
+    }
+    #desc-container span {
+        left: -1%;
+    }
+    #me-sub {
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 612px) {
+    #me-story {
+        height: 280px;
+    }
 }
