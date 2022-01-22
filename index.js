@@ -50,7 +50,7 @@ const technologies = [
     {
         name: 'GitHub',
         img: './src/imgs/logo-github',
-        href: 'https://github.com/',
+        href: 'https://github.com/IncinerateZ/',
     },
     {
         name: 'VSCode',
@@ -70,7 +70,7 @@ window.onload = function () {
     const techdiv = document.getElementById('tech-content');
     const mail = document.getElementById('top-contact');
     for (let tech of technologies) {
-        techdiv.innerHTML += `<div class="tech-icons tooltip"><a href=${
+        techdiv.innerHTML += `<div class="tech-icons tooltip"><a target="_blank" href=${
             tech.href
         }><div class="tooltiptext">${
             tech.name
