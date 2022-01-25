@@ -62,6 +62,11 @@ const technologies = [
         img: './src/imgs/logo-figma',
         href: 'https://www.figma.com/ui-design-tool/',
     },
+    {
+        name: 'Docker',
+        img: './src/imgs/logo-docker',
+        href: 'https://www.docker.com/',
+    },
 ];
 
 window.onload = function () {
