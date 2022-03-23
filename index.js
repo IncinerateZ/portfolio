@@ -100,10 +100,21 @@ window.onload = function () {
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
 
-    console.log(canvas.style.width + ' ' + canvas.style.height);
-
     window.requestAnimationFrame(animate);
 };
+
+function displayWindowSize() {
+    // Get width and height of the window excluding scrollbars
+    let w = document.documentElement.clientWidth;
+    let h = document.documentElement.clientHeight;
+
+    // Display result inside a div element
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+}
+
+// Attaching the event listener function to window's resize event
+window.addEventListener('resize', displayWindowSize);
 
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
