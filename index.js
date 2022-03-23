@@ -1,5 +1,11 @@
 var desc1, desc2;
 var descToggle = true;
+var canvas;
+var ctx;
+
+var circles = [];
+var mouseX = 0,
+    mouseY = 0;
 
 const technologies = [
     {
@@ -86,7 +92,68 @@ window.onload = function () {
     mail.onclick = () => {
         window.open('mailto:justinhalim501@gmail.com');
     };
+
+    //canvas
+    canvas = document.getElementById('canvas');
+    ctx = canvas.getContext('2d');
+
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+
+    console.log(canvas.style.width + ' ' + canvas.style.height);
+
+    window.requestAnimationFrame(animate);
 };
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+//circle
+//{
+//  x0: int,
+//  y0: int,
+//  r: int,
+//  color: string,
+//  vX: int (px/10ms),
+//  vY: int (px/10ms),
+//  lifespan: int (100ms to 200ms),
+//  createdAt: int (ms)
+//}
+
+function animate() {
+    if (circles.length < 50) {
+        let nc = {
+            x0: mouseX,
+            y0: mouseY,
+            r: Math.random() * 3 + 5,
+            color: '#CC' + Math.floor(Math.random() * 16777215).toString(16),
+            vX: (Math.random() * 2 - 1) / 5,
+            vY: (Math.random() * 2 - 1) / 5,
+            lifespan: Math.random() * 100 + 100,
+            createdAt: Date.now(),
+        };
+
+        circles.push(nc);
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let c of circles) {
+        if (c.createdAt + c.lifespan < Date.now()) {
+            circles.splice(circles.indexOf(c), 1);
+            continue;
+        }
+        let t = Date.now() - c.createdAt;
+        ctx.fillStyle = c.color;
+        ctx.beginPath();
+        ctx.arc(c.x0 + t * c.vX, c.y0 + t * c.vY, c.r, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+
+    window.requestAnimationFrame(animate);
+}
 
 //background color change
 setTimeout(() => {
